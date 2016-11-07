@@ -23,8 +23,6 @@ public class Praktijkopdracht extends Applet {
 
         g.fillArc(175,20,170,170,360,360);
 
-        // g.drawArc(150,80,70,70,140,180);
-
         int a = 150,b= 80,c= 70,d= 125,e= 180;
 
         for (int i = 0; i <4 ; i++) {

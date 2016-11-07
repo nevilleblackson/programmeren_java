@@ -7,7 +7,7 @@ import java.awt.event.*;
 public class Opdracht_5 extends Applet {
 
 
-    private boolean gevonden;
+    private boolean gevonden ,geklikt;
     private int[] salaris = {100, 300, 500, 700, 900};
 
     private TextField Text;
@@ -28,10 +28,12 @@ public class Opdracht_5 extends Applet {
 
     public void paint(Graphics g) {
 
-        if (gevonden) {
-            g.drawString("De waarde is gevonden." + INDEX, 100, 100);
-        } else {
-            g.drawString("De waarde is niet gevonden.", 20, 50);
+        if (geklikt) {
+            if (gevonden) {
+                g.drawString("De waarde is gevonden. index nr" + INDEX, 100, 100);
+            } else {
+                g.drawString("De waarde is niet gevonden.", 20, 50);
+            }
         }
     }
 
@@ -41,6 +43,7 @@ public class Opdracht_5 extends Applet {
             String s = Text.getText();
             int Textin = Integer.parseInt(s);
 
+            geklikt = false;
             gevonden = false;
 
             int teller = 0;
@@ -52,6 +55,7 @@ public class Opdracht_5 extends Applet {
                     }
                     teller++;
                 }
+            geklikt = true;
             repaint();
         }
     }

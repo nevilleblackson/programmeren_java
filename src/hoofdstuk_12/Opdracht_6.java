@@ -7,7 +7,7 @@ import java.awt.event.*;
 public class Opdracht_6 extends Applet {
 
 
-    private boolean gevonden;
+    private boolean gevonden, geklikt;
     private int[] getal = {100, 300, 500, 700, 900,500,900,600,500,100,500,1700,9000,22,22};
 
     private TextField Text;
@@ -28,12 +28,15 @@ public class Opdracht_6 extends Applet {
 
     public void paint(Graphics g) {
 
-        if (gevonden) {
-            g.drawString("De waarde is gevonden. X" + hoeveelheid + "voor", 100, 100);
-        } else {
-            g.drawString("het komt niet voor", 20, 50);
+        if(geklikt) {
+            if (gevonden) {
+                g.drawString("De waarde komt  " + hoeveelheid + "keer voor", 100, 100);
+            } else {
+                g.drawString("het komt niet voor", 100, 100);
+            }
         }
     }
+
 
     private class TextListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
@@ -41,6 +44,7 @@ public class Opdracht_6 extends Applet {
             String s = Text.getText();
             int Textin = Integer.parseInt(s);
 
+            geklikt  = false;
             gevonden = false;
 
             int teller = 0;
@@ -54,6 +58,7 @@ public class Opdracht_6 extends Applet {
                 }
                 teller++;
             }
+            geklikt = true;
             repaint();
         }
     }

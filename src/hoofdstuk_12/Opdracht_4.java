@@ -22,10 +22,10 @@ public class Opdracht_4 extends Applet{
 
     public void paint(Graphics g) {
         if(gevonden) {
-            g.drawString("De waarde is gevonden.", 20, 50);
+            g.drawString("De waarde is gevonden.", 100, 100);
         }
         else {
-            g.drawString("De waarde is niet gevonden.", 20, 50);
+            g.drawString("De waarde is niet gevonden.", 100, 100);
         }
     }
 }
