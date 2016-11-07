@@ -54,7 +54,7 @@ public class Praktijkopdracht extends Applet {
     class TextListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
 
-            klaar = true;
+            // klaar = true;
             String N = TextN.getText();
             String tex = TextT.getText();
             int T = Integer.parseInt(tex);
