@@ -1,7 +1,7 @@
 package Test;
 
-        import java.awt.*;
-        import java.applet.*;
+import java.applet.Applet;
+import java.awt.*;
 
 public class Test extends Applet {
     double[] getallen = { 2, 4, 6, 8};
@@ -29,7 +29,6 @@ public class Test extends Applet {
             som += d[teller];
         }
         gem = som / d.length;
-
         return gem;
     }
 }
