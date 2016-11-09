@@ -3,7 +3,7 @@ package hoofdstuk_14;
 import java.applet.Applet;
 import java.awt.*;
 
-public class Opdracht_2 extends Applet {
+public class Opdracht_3 extends Applet {
 
     double r, r2;
     int worp, worp2;

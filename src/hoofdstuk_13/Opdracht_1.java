@@ -1,48 +1,103 @@
 package hoofdstuk_13;
 
+import java.applet.Applet;
 import java.awt.*;
-import java.applet.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Opdracht_1 extends Applet {
 
-    Button b,c,d,e,f;
+    Button b, c, d, g, f;
     Button[] a;
+    Color kl;
+    String n;
+    boolean geklikt = false;
+
 
     public void init() {
 
         a = new Button[5];
-        b = new Button("blauw");
+        b = new Button("CYAN");
         c = new Button("rood");
         d = new Button("geel");
-        e = new Button("groen");
+        g = new Button("groen");
         f = new Button("wit");
 
+        b.addActionListener(new bListener());
+        c.addActionListener(new cListener());
+        d.addActionListener(new dListener());
+        g.addActionListener(new eListener());
+        f.addActionListener(new fListener());
 
         add(b);
         add(c);
         add(d);
-        add(e);
+        add(g);
         add(f);
 
-        /*
-        for (int teller = 0; teller < b.length; teller++) {
-
-            b[teller] = new Button("ok");
-            add(b[teller]);
-        }
-        */
     }
 
     public void paint(Graphics g) {
 
-        // tekenDriehoek(g,100,276,300,460,200,300);
+        if (geklikt) {
+            tekenDriehoek(g, kl, n);
+        }
     }
 
-    void tekenDriehoek ( Graphics g, int x1, int y1, int x2, int y2, int x3, int y3) {
+    void tekenDriehoek(Graphics g, Color kleur, String name) {
 
-        g.drawLine(x1,y1,x2,y2);
-        g.drawLine(x2,y2,x3,y3);
-        g.drawLine(x3,y3,x1,y1);
+        setBackground(kleur);
+        g.drawString(name, 100, 100);
 
+    }
+
+    private class bListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            kl = Color.CYAN;
+            n = b.getLabel();
+
+            geklikt = true;
+            repaint();
+        }
+    }
+
+    private class cListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            kl = Color.red;
+            n = c.getLabel();
+
+            geklikt = true;
+            repaint();
+        }
+    }
+
+    private class dListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            kl = Color.yellow;
+            n = d.getLabel();
+
+            geklikt = true;
+            repaint();
+        }
+    }
+
+    private class eListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            kl = Color.green;
+            n = g.getLabel();
+
+            geklikt = true;
+            repaint();
+        }
+    }
+
+    private class fListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            kl = Color.white;
+            n = f.getLabel();
+
+            geklikt = true;
+            repaint();
+        }
     }
 }

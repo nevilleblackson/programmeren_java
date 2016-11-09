@@ -1,11 +1,10 @@
 
 package hoofdstuk_13;
 
-        import java.awt.*;
-        import java.applet.*;
+import java.applet.Applet;
+import java.awt.*;
 
 public class Praktijkopdracht extends Applet {
-
 
 
     public void init() {
@@ -13,45 +12,38 @@ public class Praktijkopdracht extends Applet {
     }
 
     public void paint(Graphics g) {
-        boom(g);
+        boom(g, 4);
     }
 
-    void boom ( Graphics g) {
 
-        g.drawArc(150,150,100,300,270,180);
-        g.drawArc(300,150,100,300,90,180);
+    void boom(Graphics g, int aantalrijen) {
 
-        g.fillArc(175,20,170,170,360,360);
+        int x, x2, y, y2, x3, length;
+        x = 100;
+        y = 100;
+        x2 = 150;
+        length = 300;
+        y2 = 30;
+        x3 = 50;
+        //aantalrijen = aantalrijen *
 
-        int a = 150,b= 80,c= 70,d= 125,e= 180;
+        for (int i = 0; i < 10; i++) {
+            x += 200;
+            x2 += 200;
+            x3 += 200;
 
-        for (int i = 0; i <4 ; i++) {
+            g.fillRect(50, 50, 100, 100);
+            g.drawLine(x, y, x, length);
+            g.drawLine(x2, y, x2, length);
+            g.setColor(Color.green);
+            g.fillArc(x3, y2, 150, 150, 360, 360);
+            g.setColor(Color.black);
 
-            g.fillArc(a,b,c,c,d,e);
-
-            a += 20;
-            b -= 30;
-            c += 0;
-            d -= 40;
-            e += 0;
-
-        }
-
-        a = 230;
-        b= 0;
-        c= 70;
-        d= -35;
-        e= 180;
-
-        for (int i = 0; i <4 ; i++) {
-
-            g.fillArc(a,b,c,c,d,e);
-
-            a += 25;
-            b += 30;
-            c += 0;
-            d -= 35;
-            e += 0;
+            if (i == 5) {
+                x = 100;
+                x2 = 150;
+                x3 = 50;
+            }
         }
     }
 }

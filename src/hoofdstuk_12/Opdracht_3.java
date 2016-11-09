@@ -1,9 +1,10 @@
 package hoofdstuk_12;
 
+import java.applet.Applet;
 import java.awt.*;
-import java.applet.*;
-import java.awt.event.*;
-import java.util.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Arrays;
 
 public class Opdracht_3 extends Applet {
     Button ok;
@@ -18,8 +19,7 @@ public class Opdracht_3 extends Applet {
 
         for (int teller = 0; teller < Text.length; teller++) {
 
-            Text[teller] = new TextField("", 15);
-            // SText[teller] = "";
+            Text[teller] = new TextField("", 5);
             add(Text[teller]);
 
         }
@@ -30,10 +30,6 @@ public class Opdracht_3 extends Applet {
 
     public void paint(Graphics g) {
 
-
-        for (int teller = 0; teller < Text.length; teller++) {
-            // g.drawString(SText[teller], 200 * teller + 5, 120);
-    }
     }
 
     class TextfieldListener implements ActionListener {
