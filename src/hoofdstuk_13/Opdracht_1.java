@@ -40,11 +40,11 @@ public class Opdracht_1 extends Applet {
     public void paint(Graphics g) {
 
         if (geklikt) {
-            tekenDriehoek(g, kl, n);
+            achtergrondkluer(g, kl, n);
         }
     }
 
-    void tekenDriehoek(Graphics g, Color kleur, String name) {
+    void achtergrondkluer(Graphics g, Color kleur, String name) {
 
         setBackground(kleur);
         g.drawString(name, 100, 100);

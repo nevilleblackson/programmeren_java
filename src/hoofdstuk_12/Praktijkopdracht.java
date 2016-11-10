@@ -6,10 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Praktijkopdracht extends Applet {
-
-
-    int wtf = 0;
-    int tel = 0;
     int i = 0;
     private boolean klaar = false;
     private String[] namen;
