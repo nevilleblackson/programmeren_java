@@ -12,7 +12,7 @@ public class Praktijkopdracht extends Applet {
     }
 
     public void paint(Graphics g) {
-        boom(g, 10);
+        boom(g, 17);
     }
 
 

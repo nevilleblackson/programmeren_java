@@ -5,20 +5,18 @@ import java.awt.*;
 
 public class Opdracht_1 extends Applet {
 
-    double r, r2;
-    int worp, worp2;
-    String[] nummers = {"een", "twee", "drie", "fier", "vijf", "zes", "zeven", "acht", "negen", "tien", "boer", "vrouw", "heer", "aas"};
-    String[] naam = {"ruiten", "harten", "klaveren", "schoppen"};
+    private int worp;
+    private String[] kaart = {"ruiten een", "ruiten twee", " ruiten drie", " ruiten fier", " ruiten vijf", " ruiten zes", "ruiten zeven", " ruiten acht", "ruiten negen", "ruiten tien", " ruiten boer", "ruiten vrouw", " ruiten heer", "ruiten aas",
+            "harten een", "harten twee", " harten drie", " harten fier", " harten vijf", " harten zes", "harten zeven", " harten acht", "harten negen", "harten tien", " harten boer", "harten vrouw", " harten heer", "harten aas",
+            "klaveren een", "klaveren twee", " klaveren drie", " klaveren fier", " klaveren vijf", " klaveren zes", "klaveren zeven", " klaveren acht", "klaveren negen", "klaveren tien", " klaveren boer", "klaveren vrouw", " klaveren heer", "klaveren aas",
+            "schoppen een", "schoppen twee", " schoppen drie", " schoppen fier", " schoppen vijf", " schoppen zes", "schoppen zeven", " schoppen acht", "schoppen negen", "schoppen tien", " schoppen boer", "schoppen vrouw", " schoppen heer", "schoppen aas"};
 
     public void init() {
-        r = Math.random();
-        worp = (int) (r * 4);
-        r2 = Math.random();
-        worp2 = (int) (r2 * 14);
+        double r = Math.random();
+        worp = (int) (r * 56);
     }
 
     public void paint(Graphics g) {
-        g.drawString(naam[worp], 50, 60);
-        g.drawString(nummers[worp2], 120, 60);
+        g.drawString(kaart[worp], 50, 60);
     }
 }
