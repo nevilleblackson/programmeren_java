@@ -12,7 +12,8 @@ public class Praktijkopdracht extends Applet {
     private TextField spelText;
     private int aantal = 23;
     private int spelerzet;
-    private int compzet;
+    private int spelertussenstap;
+    private int computerzet;
     private String win;
     private Image afbeelding;
 
@@ -28,7 +29,14 @@ public class Praktijkopdracht extends Applet {
     }
 
     public void paint(Graphics g) {
-        if(zet) {
+
+        if(!zet) {
+            zet = true;
+            g.setColor(Color.red);
+            g.drawString("getal tussen 1 en 3",40,60);
+            g.setColor(Color.black);
+        }
+
             if (aantal > 0) {
 
                 int x = 50;
@@ -43,20 +51,14 @@ public class Praktijkopdracht extends Applet {
                         y += 50;
                     }
                 }
-
                 g.drawString("laatste zet speler" + spelerzet, 200, 50);
-                g.drawString("laatste zet comp" + compzet, 200, 70);
+                g.drawString("laatste zet comp" + computerzet, 200, 70);
             }
             else {
                 g.drawString(win, 100, 100);
             }
         }
 
-        else{
-            zet = true;
-            g.drawString("getal tussen 1 en 3",100,100);
-        }
-    }
 
     private int Cset() {
         int END = 0;
@@ -92,18 +94,18 @@ public class Praktijkopdracht extends Applet {
         public void actionPerformed(ActionEvent e) {
 
             String a = spelText.getText();
-            spelerzet = Integer.parseInt(a);
+            spelertussenstap = Integer.parseInt(a);
 
+            if(spelertussenstap < 4 && spelertussenstap > 0) {
 
-            if(spelerzet < 4 && spelerzet > 0) {
-
+                spelerzet = spelertussenstap;
                 aantal -= spelerzet;
-                if (aantal < 0) {
+                if (aantal < 1) {
                     win = "je hebt verloren";
                 } else {
 
-                    compzet = Cset();
-                    aantal -= compzet;
+                    computerzet = Cset();
+                    aantal -= computerzet;
                     if (aantal < 0) {
                         win = "je hebt gewonnen";
                     }
