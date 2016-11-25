@@ -9,20 +9,19 @@ import java.net.URL;
 public class Praktijkopdracht extends Applet {
 
     private boolean zet = true;
-    private TextField spelText;
+    private TextField Text;
     private int aantal = 23;
     private int spelerzet;
-    private int spelertussenstap;
     private int computerzet;
-    private String win;
+    private String wiewint;
     private Image afbeelding;
 
     public void init() {
-        spelText = new TextField("",10);
+        Text = new TextField("",10);
 
-        spelText.addActionListener(new spelTextListener());
+        Text.addActionListener(new spelTextListener());
 
-        add(spelText);
+        add(Text);
 
         URL pad = Praktijkopdracht.class.getResource("/images/");
         afbeelding = getImage(pad, "heart symbol.png");
@@ -55,7 +54,7 @@ public class Praktijkopdracht extends Applet {
                 g.drawString("laatste zet comp" + computerzet, 200, 70);
             }
             else {
-                g.drawString(win, 100, 100);
+                g.drawString(wiewint, 100, 100);
             }
         }
 
@@ -93,21 +92,21 @@ public class Praktijkopdracht extends Applet {
     private class spelTextListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
 
-            String a = spelText.getText();
-            spelertussenstap = Integer.parseInt(a);
+            String a = Text.getText();
+            int spelertussenstap = Integer.parseInt(a);
 
             if(spelertussenstap < 4 && spelertussenstap > 0) {
 
                 spelerzet = spelertussenstap;
                 aantal -= spelerzet;
                 if (aantal < 1) {
-                    win = "je hebt verloren";
+                    wiewint = "je hebt verloren";
                 } else {
 
                     computerzet = Cset();
                     aantal -= computerzet;
                     if (aantal < 0) {
-                        win = "je hebt gewonnen";
+                        wiewint = "je hebt gewonnen";
                     }
 
                 }
